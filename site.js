@@ -2,5 +2,5 @@
 window.SITE = {
   name: "Lurch",
   tagline: "Whats in the fridge",
-  color: "#5fe3cf"
+  color: "#506778"
 };
