@@ -3,64 +3,33 @@
 // Put a <style> block inside and start every selector with #team so your CSS only affects your section.
 section("team", () => `
   <style>
-    #team {
-      background: #FAF7F2;
-      color: #28343D;
-      border-radius: 28px;
-      padding: clamp(28px, 6vw, 64px);
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    }
     #team .team-intro { max-width: 600px; }
-    #team .team-eyebrow {
-      display: inline-block;
-      background: #DCE5EB;
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    #team h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      margin: 20px 0 16px;
-      overflow-wrap: anywhere;
-    }
-    #team .team-description { color: #506778; line-height: 1.75; margin: 0; }
+    #team .team-eyebrow { margin-bottom: 24px; }
+    #team .team-description { color: var(--muted); margin: 0; }
     #team .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-      gap: 20px;
+      gap: var(--grid-gap);
       margin: 32px 0;
-    }
-    #team .team-card {
-      background: #FFFFFF;
-      border: 1px solid #DCE5EB;
-      border-radius: 20px;
-      padding: 26px;
     }
     #team .team-avatar {
       display: grid;
       place-items: center;
       width: 60px;
       height: 60px;
-      border-radius: 50%;
-      background: #DCE5EB;
-      color: #506778;
+      border-radius: var(--radius-control);
+      background: var(--brand);
+      color: var(--text);
       font-size: 1.2rem;
       font-weight: 700;
     }
-    #team h3 { font-size: 1.15rem; margin: 20px 0 6px; }
-    #team .team-bio { font-size: 0.95rem; line-height: 1.7; margin: 16px 0 0; padding-left: 20px; }
+    #team h3 { margin: 16px 0 8px; }
+    #team .team-bio { color: var(--muted); margin: 16px 0 0; padding-left: 20px; }
     #team .team-bio li { margin-bottom: 8px; }
-    #team .team-bio li::marker { color: #506778; }
     #team .team-mission {
-      border-top: 1px solid #DCE5EB;
+      border-top: 1px solid var(--border);
       padding-top: 24px;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       gap: 12px;
     }
@@ -68,14 +37,14 @@ section("team", () => `
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: ${SITE.color};
+      background: var(--brand);
       flex: 0 0 auto;
     }
-    #team .team-mission p { margin: 0; font-size: 0.9rem; }
+    #team .team-mission p { margin: 0; font-size: .9rem; color: var(--muted); }
   </style>
 
   <div class="team-intro">
-    <span class="team-eyebrow">The people behind the plate</span>
+    <span class="team-eyebrow theme-badge">The people behind the plate</span>
     <h2>Meet the team behind ${SITE.name}.</h2>
     <p class="team-description">
       A fridge full of ingredients. A little inspiration. We're building
@@ -84,7 +53,7 @@ section("team", () => `
   </div>
 
   <div class="team-grid">
-    <article class="team-card">
+    <article class="team-card theme-card">
       <div class="team-avatar" aria-hidden="true">M</div>
       <h3>Malina</h3>
       <ul class="team-bio">
@@ -94,7 +63,7 @@ section("team", () => `
         <li>Favorite food: sweet potato</li>
       </ul>
     </article>
-    <article class="team-card">
+    <article class="team-card theme-card">
       <div class="team-avatar" aria-hidden="true">G</div>
       <h3>Griffin</h3>
       <ul class="team-bio">
@@ -103,7 +72,7 @@ section("team", () => `
         <li>Favorite food: pasta</li>
       </ul>
     </article>
-    <article class="team-card">
+    <article class="team-card theme-card">
       <div class="team-avatar" aria-hidden="true">I</div>
       <h3>Imani</h3>
       <ul class="team-bio">
